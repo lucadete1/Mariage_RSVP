@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Palette fournie (application) */
+  --cream: #f7f7ef; /* blanc cassé */
+  --sand: #f7f7ef; /* neutre clair */
+
+  --gold: #de7d4a; /* terracotta principal */
+  --gold-dark: #7b3019; /* terracotta foncé */
+  --gold-light: #de7d4a; /* utilisé en hover */
+
+  --brown: #4a2419; /* brun principal */
+  --dark: #4a2419; /* texte foncé */
+  --text: #4a2419;
+  --text-muted: #7b3019; /* texte secondaire */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.animate-fade-up   { animation: fadeUp 1s ease both; }
+.animate-fade-up-1 { animation: fadeUp 1s 0.2s ease both; }
+.animate-fade-up-2 { animation: fadeUp 1s 0.35s ease both; }
+.animate-fade-up-3 { animation: fadeUp 1s 0.5s ease both; }
+.animate-fade-up-4 { animation: fadeUp 1s 0.65s ease both; }
+.animate-fade-in-5 { animation: fadeIn 1s 1.2s both; }
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.scroll-hint::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--gold);
+  opacity: 0.5;
+  animation: scrollLine 1.5s ease infinite;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .timeline-line { left: 60px; }
+}
