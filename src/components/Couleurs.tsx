@@ -6,21 +6,20 @@ export default function Couleurs() {
     <section id="couleurs" style={{ padding: '6rem 2rem', background: '#fff', textAlign: 'center' }}>
       <SectionHeader tag="Palette" title="Couleurs du Mariage" />
 
-      <p className="fade-in-up" style={{ maxWidth: 550, margin: '0 auto 2.5rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
+      <p className="fade-in-up site-container" style={{ marginBottom: '2.5rem', fontSize: '0.95rem', color: 'var(--text-muted)' }}>
         Une palette douce, chaleureuse et élégante choisie avec amour par Emec &amp; Agathe.
       </p>
-
-      <div className="fade-in-up" style={{ maxWidth: 700, margin: '0 auto 2rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', justifyItems: 'stretch', alignItems: 'stretch' }}>
+      <div className="fade-in-up site-container" style={{ marginBottom: '2rem' }}>
+        <div className="grid-2 palette-grid">
           {PALETTE_IMAGES.map((src, i) => (
             <div
               key={i}
+              className="color-card"
               style={{
                 borderRadius: 4,
                 overflow: 'hidden',
                 boxShadow: '0 8px 40px rgba(92,61,46,0.12)',
                 aspectRatio: '1 / 1',
-                width: '100%',
                 display: 'flex',
               }}
             >

@@ -56,7 +56,7 @@ export default function Rsvp() {
           Merci ! Votre réponse a bien été enregistrée.
         </div>
       ) : (
-        <div className="fade-in-up" style={{ maxWidth: 480, margin: '2.5rem auto 0', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
+        <div className="fade-in-up narrow-container" style={{ margin: '2.5rem auto 0', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', textAlign: 'left' }}>
             <label style={labelStyle}>Votre prénom &amp; nom</label>
             <input type="text" placeholder="Ex. Jean Kouadio" value={name} onChange={e => setName(e.target.value)} style={inputStyle} />

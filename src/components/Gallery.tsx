@@ -9,7 +9,7 @@ export default function Gallery() {
     <section id="galerie" style={{ padding: '6rem 2rem', background: '#fff' }}>
       <SectionHeader tag="Nos souvenirs" title={GALLERY_SECTION_TITLE} />
 
-      <div className="fade-in-up" style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', justifyContent: 'center', gap: '1.2rem' }}>
+      <div className="fade-in-up site-container" style={{ display: 'flex', justifyContent: 'center', gap: '1.2rem', flexWrap: 'wrap' }}>
         {GALLERY_PHOTOS.map((p, i) => (
           <div key={i}
             style={{ position: 'relative', overflow: 'hidden', aspectRatio: '3/4', background: 'var(--sand)', cursor: 'pointer', width: '100%', maxWidth: 280 }}

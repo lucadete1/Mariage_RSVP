@@ -30,6 +30,19 @@ body {
   overflow-x: hidden;
 }
 
+/* Improve rendering and sizing on WebKit/Safari (iOS & macOS) */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Safe-area support for iPhone notch devices */
+:root {
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -100,4 +113,200 @@ body {
 
 @media (max-width: 768px) {
   .timeline-line { left: 60px; }
+}
+
+/* Responsive container utility */
+.site-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: calc(1rem + var(--safe-left));
+  padding-right: calc(1rem + var(--safe-right));
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Narrow container for forms and small blocks */
+.narrow-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Simple responsive 2-column grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Palette specific grid: make columns narrower and centered so columns are closer while keeping gap */
+.palette-grid {
+  grid-template-columns: repeat(2, minmax(120px, 220px));
+  justify-content: center;
+}
+.palette-grid > div {
+  max-width: 220px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .palette-grid > div { max-width: 160px; }
+}
+
+/* Inputs and form elements: more consistent on iOS/Safari */
+input, textarea, select, button {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Autofill styling for WebKit */
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.03) inset;
+  box-shadow: 0 0 0px 1000px rgba(255,255,255,0.03) inset;
+  -webkit-text-fill-color: var(--text);
+}
+
+/* Improve image handling on touch devices */
+img { -webkit-user-drag: none; }
+
+/* Provide a helper class to apply safe-area padding to full-bleed sections if needed */
+.safe-area { padding-left: var(--safe-left); padding-right: var(--safe-right); }
+
+/* Footer styles */
+.site-footer {
+  background: #1a110a;
+  color: rgba(253,248,243,0.9);
+  padding: 3.5rem 1rem 2rem;
+}
+.site-footer .footer-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid rgba(201,169,110,0.12);
+}
+.footer-left .footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.footer-desc { font-size: 0.9rem; color: rgba(253,248,243,0.5); line-height: 1.6; }
+.footer-divider { background: rgba(201,169,110,0.18); width: 1px; min-height: 80px; margin: 0 auto; }
+.footer-right { display: flex; gap: 2rem; justify-content: flex-end; }
+.footer-group { min-width: 160px; }
+.footer-heading { font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.footer-link { display: inline-block; color: rgba(253,248,243,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.footer-link:hover { color: var(--gold); }
+.footer-contact { margin-bottom: 0.6rem; }
+.footer-addresses a { display: block; margin-bottom: 0.4rem; }
+.gold { color: var(--gold); }
+.footer-bottom { max-width: 1000px; margin: 1.2rem auto 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: rgba(253,248,243,0.35); }
+.footer-bottom .back-top { color: var(--gold); text-decoration: none; opacity: 0.9; }
+
+@media (max-width: 768px) {
+  .site-footer { padding: 2rem 1rem; }
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  .footer-divider { display: none; }
+  .footer-right { flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 1rem; }
+  .footer-bottom { flex-direction: column; gap: 0.6rem; text-align: center; }
+  .footer-bottom .muted { order: 2; }
+  .footer-bottom .back-top { order: 1; }
+}
+
+/* Responsive navigation styles */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(253, 248, 243, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.nav-links-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+}
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--dark);
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .site-nav { padding: 0.7rem 1rem; }
+  .nav-links-list { display: none; }
+  .nav-hamburger { display: block; }
+  .nav-links-list.open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 1rem;
+    background: rgba(253, 248, 243, 0.98);
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  }
+  .nav-links-list.open li a { display: block; padding: 0.45rem 0.8rem; }
+}
+
+/* Gallery: use grid on desktop, horizontal scroll on small screens */
+.site-container .gallery-grid {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  .site-container .gallery-grid { display: flex; overflow-x: auto; gap: 0.8rem; padding-bottom: 0.6rem; }
+  .site-container .gallery-grid > div { min-width: 70%; max-width: 320px; flex: 0 0 auto; }
+}
+
+/* Color cards: smaller visual size but keep grid spacing unchanged */
+.color-card {
+  max-width: 260px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) {
+  .color-card { max-width: 200px; }
 }

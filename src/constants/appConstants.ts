@@ -62,28 +62,26 @@ export const PALETTE_IMAGES = Object.keys(paletteModules)
   .map((k) => (paletteModules as Record<string, string>)[k]);
 
 export const GIFTS = [
-  [1, 'Écran télévision android 55 pouces 4K', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [2, 'Écran télévision android 43 pouces 4K', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [3, 'Climatiseur inverter 1.5 chv', 2, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [4, 'Réfrigérateur No frost 4 portes 400 ou 522 L', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [5, 'Cuisinière 4 feux 60x60 avec four', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [6, 'Ventilateur à eau rechargeable', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [7, 'Ventilateur à eau non rechargeable', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [8, 'Ventilateur simple (Tefal ou Binatone)', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [9, 'Micro-onde 25L Hisense ou Midéa', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [10, 'Machine à laver semi-automatique 7.5kg', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [11, 'Air Fryer 5.2 L Hisense', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
-  [12, 'Kit Mixer blender Moulinex', 1, 'Orca Deco Marcory', '—'],
-  [13, 'Batteuse à cake Moulinex', 1, 'Orca Deco Marcory', '—'],
-  [14, 'Fer à repasser', 1, 'Orca Deco Marcory', '—'],
-  [15, 'Ustensiles (assiettes, verres, casseroles, soupières, glacières, etc…)', '—', 'Decoria Riviera', '—'],
-  [16, 'Cartes cadeaux', 5, 'Galerie Peryssac', '—'],
+  [1, 'Écran télévision android 43 pouces 4K', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [2, 'Réfrigérateur No frost 4 portes 400 ou 522 L', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [3, 'Cuisinière 4 feux 60x60 avec four', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [5, 'Ventilateur à eau rechargeable', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [6, 'Ventilateur à eau non rechargeable', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [7, 'Ventilateur simple (Tefal ou Binatone)', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [8, 'Machine à laver semi-automatique 7.5kg', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [9, 'Air Fryer 5.2 L Hisense', 1, 'ElectroShop Angré Mahou', '07 49 72 20 18 / www.electroshop.ci'],
+  [10, 'Kit Mixer blender Moulinex', 1, 'Orca Deco Marcory', '—'],
+  [11, 'Batteuse à cake Moulinex', 1, 'Orca Deco Marcory', '—'],
+  [12, 'Fer à repasser', 1, 'Orca Deco Marcory', '—'],
+  [13, 'Ustensiles (assiettes, verres, casseroles, soupières, glacières, etc…)', '—', 'Decoria Riviera', '—'],
+  [14, 'Cartes cadeaux', 5, 'Galerie Peryssac', '—'],
 ];
 
 
 export const FOOTER = {
   year: 2026,
   rendezVous: '13 au 14 Mai 2026',
+  phone: '+225 07 09 04 48 52',
   links: [
     ['#accueil', 'Accueil'],
     ['#galerie', 'Galerie'],
