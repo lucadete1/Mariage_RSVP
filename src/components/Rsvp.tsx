@@ -64,7 +64,7 @@ export default function Rsvp() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', textAlign: 'left' }}>
             <label style={labelStyle}>Numéro de téléphone</label>
-            <input type="tel" placeholder="Ex. +225 07 12 34 56 78" value={contact} onChange={e => setContact(e.target.value)} style={inputStyle} />
+            <input type="tel" placeholder="Ex.07 12 34 56 78" value={contact} onChange={e => setContact(e.target.value)} style={inputStyle} />
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', textAlign: 'left' }}>
