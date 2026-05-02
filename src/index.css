@@ -287,7 +287,7 @@ img { -webkit-user-drag: none; }
   width: 20px;
   height: 2px;
   background: var(--dark);
-  margin: 4px 0;
+  margin: 4px 0; 
 }
 
 @media (max-width: 768px) {
